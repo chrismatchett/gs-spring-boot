@@ -426,3 +426,11 @@ The following guides may also be helpful:
 * https://spring.io/guides/gs/serving-web-content/[Serving Web Content with Spring MVC]
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/footer.adoc[]
+
+== Student Notes
+
+Visual Studio extensions
+
+* Spring Boot Extension Pack
+* Spring Boot Dashboard
+* Spring Boot Tools
