@@ -9,19 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 // @RestController
 @Controller
-public class LoginController {
+public class TodoController {
 
-	/*
-	 * @GetMapping("/")
-	 * public String index() {
-	 * return "Greetings from Spring Boot!";
-	 * }
-	 */
+	@GetMapping("/")
+	public String index() {
+		return "index";
+	}
 
-	@GetMapping("/login")
-	public String loginForm(Model model) {
-		model.addAttribute("login", new loginForm());
-		return "login";
+	@PostMapping("/add")
+	public String postAdd(@ModelAttribute TodoAdd todoAdd, Model model) {
+		model.addAttribute("todoAdd", todoAdd);
+		return "add";
 	}
 
 }
+//
