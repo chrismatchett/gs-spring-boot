@@ -17,7 +17,7 @@ public class TodoController {
 	}
 
 	@PostMapping("/add")
-	public String postAdd(@ModelAttribute TodoAdd todoAdd, Model model) {
+	public String postAdd(@ModelAttribute Todo todoAdd, Model model) {
 		model.addAttribute("todoAdd", todoAdd);
 		return "add";
 	}
