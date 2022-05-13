@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 // @RestController
+// https://spring.io/guides/gs/handling-form-submission/
 @Controller
 public class TodoController {
 
@@ -19,17 +20,7 @@ public class TodoController {
 	}
 
 	@PostMapping("/add")
-	public String postAdd(Model model) {
-
-		Todo t2 = new Todo(2, "Milk2", "Get the milk2");
-		ArrayList<Todo> todo = new ArrayList<Todo>();
-		t2.setId(2);
-		t2.setTitle("Milk2");
-		t2.setDescription("Get the Milk2");
-
-		TodoRepository.list.add("a");
-		System.out.println(TodoRepository.list.size());
-
+	public String addTodo(@ModelAttribute Todo todo, Model model) {
 		model.addAttribute("todo", todo);
 		return "add";
 	}
