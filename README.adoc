@@ -33,7 +33,7 @@ We will use Spring as the rapid development framework to create a Web Applicatio
 
 We will deploy our web application to Microsoft Azure, https://portal.azure.com.
 
-=== Project ManagementServerProperties
+=== Project Management
 
 We will use Trello for planning and task management, https://trello.com.
 
