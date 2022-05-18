@@ -28,6 +28,10 @@ We will use Spring as the rapid development framework to create a Web Applicatio
 * Thymeleaf, https://www.thymeleaf.org/documentation.html
 * Bootstrap, https://getbootstrap.com/docs/5.1/getting-started/introduction/
 
+Important folders in our Spring project.
+
+* Java web application files, complete\src\main\java\com\example\springboot.
+* Theymeleaf HTML template files, complete\src\main\resources\templates.
 
 === Microsoft Azure
 
