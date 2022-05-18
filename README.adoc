@@ -5,6 +5,40 @@
 :source-highlighter: prettify
 :project_id: gs-spring-boot
 
+== Belfast Met / Version 1 Academy
+
+=== Java 
+
+We will use the Liberica JDK 11 Java Runtime, https://bell-sw.com/.
+
+
+=== Visual Studio Code
+
+We will use Visual Studio Code as our IDE, https://code.visualstudio.com/, when working with Java
+
+* Spring Boot Extension Pack
+* Spring Boot Dashboard
+* Spring Boot Tools
+
+=== Spring 
+
+We will use Spring as the rapid development framework to create a Web Application for our Client Simulation.
+
+* Spring, https://spring.io/
+* Thymeleaf, https://www.thymeleaf.org/documentation.html
+* Bootstrap, https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+
+=== Microsoft Azure
+
+We will deploy our web application to Microsoft Azure, https://portal.azure.com.
+
+=== Project ManagementServerProperties
+
+We will use Trello for planning and task management, https://trello.com.
+
+---
+
 This guide provides a sampling of how {spring-boot}[Spring Boot] helps you accelerate
 application development. As you read more Spring Getting Started guides, you will see more
 use cases for Spring Boot. This guide is meant to give you a quick taste of Spring Boot.
@@ -426,11 +460,3 @@ The following guides may also be helpful:
 * https://spring.io/guides/gs/serving-web-content/[Serving Web Content with Spring MVC]
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/footer.adoc[]
-
-== Student Notes
-
-Visual Studio extensions
-
-* Spring Boot Extension Pack
-* Spring Boot Dashboard
-* Spring Boot Tools
