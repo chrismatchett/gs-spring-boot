@@ -15,7 +15,7 @@ public class Application {
 		// this runs the main application
 		SpringApplication.run(Application.class, args);
 		// testing global list
-		System.out.println(TodoRepository.list.size());
+		System.out.println(TodoRepository.datastore.size());
 	}
 
 	@Bean

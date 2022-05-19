@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Todo - Home</title>
+    <title>Todo - All Todos</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -12,8 +12,16 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Todo</h1> 
+            <h1 class="mb-5">Todos</h1>
             <a href="/todo">Add Todo</a>
+                <div th:each="row, iterStat: ${datastore}">
+                    <p th:text="${row[0]}" class="font-weight-bold"></p>
+                    <p th:text="${row[1]}" class=""></p>
+                    <p>
+                        <a th:href="@{/delete(id=${iterStat.index})}">Delete</a>
+                    </p>
+                    <hr />
+                </div>
         </div>
     </div>
 </div>

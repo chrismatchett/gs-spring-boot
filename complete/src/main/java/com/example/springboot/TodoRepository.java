@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TodoRepository {
 
-    public static ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+    public static ArrayList<ArrayList<String>> datastore = new ArrayList<ArrayList<String>>();
 
 }
 

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Spring Boot Thymeleaf - Bootstrap CDN</title>
+    <title>Todo - New Todo</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -12,10 +12,18 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="mb-5">Todos</h1>
-                <p th:text="${todo.title}" class="font-weight-bold"></p>
-                <p th:text="${todo.description}" class=""></p>
-                <hr />
+            <h1>Todo</h1> 
+            <form action="/todos" method="post">
+                <div class="form-group">
+                  <label for="inputTitle">Title</label>
+                  <input type="text" class="form-control" id="inputTitle" name="title" placeholder="Milk">
+                </div>
+                <div class="form-group">
+                  <label for="inputDescription">Description</label>
+                  <input type="text" class="form-control" id="inputDescription" name="description" placeholder="Get the milk">
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </form>
         </div>
     </div>
 </div>
