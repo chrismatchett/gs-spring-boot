@@ -21,13 +21,36 @@ public class TodoController {
 	}
 
 	@GetMapping("/todo")
-	public String todo() {
+	public String todo(Model model, @RequestParam String id) {
+		
+		int todoId = -1;
+		String action = "new?id=null";
+		String actionButton = "New";
+		List<String> datastore = Arrays.asList("", "", "");
+
+		// Check if this is a new todo or an edit of an existing todo
+		if(!id.equals("")){
+			todoId = Integer.parseInt(id);
+			action = "edit?id=" + todoId;
+			actionButton = "Edit";
+			datastore = TodoRepository.datastore.get(todoId);
+		}
+
+		model.addAttribute("action", action);
+		model.addAttribute("actionButton", actionButton);
+		model.addAttribute("datastore", datastore);
 		return "todo";
 	}
 
+	@GetMapping("/todos")
+	public String todos(Model model) {
+		model.addAttribute("datastore", TodoRepository.datastore);
+		return "todos";
+	}
+
 	// @RequestParam gets all the values from the form e.g. title = Milk, description = Get the milk
-	@PostMapping("/todos")
-	public String todos(Model model, @RequestParam Map<String, String> allParams) {
+	@PostMapping("/new")
+	public String newTodo(Model model, @RequestParam Map<String, String> allParams) {
 
 		// Loop over the form parameters and add them to a new ArrayList
 		ArrayList<String> newTodo = new ArrayList<String>(); 
@@ -35,19 +58,47 @@ public class TodoController {
 			String paramKey = key;
 			String paramValue = allParams.get(key);
 			newTodo.add(paramValue);
+			// System.out.println(paramKey + ": " + paramValue);
 		}
 		// Add the new ArrayList to the existing TodoRepository ArrayList
 		TodoRepository.datastore.add(newTodo);
+	
+		// redirect to the GetMapping Todos page so refreshing the page doesn't re-submit the form
+		return "redirect:todos";
+	}
 
-		/*
-		Test the ArrayList
+	@PostMapping("/edit")
+	public String editTodo(Model model, @RequestParam Map<String, String> allParams) {
 
-		for (int i = 0; i < TodoRepository.datastore.size(); i++) {
-            System.out.println(TodoRepository.datastore.get(i));
-        }
-		*/
+		int editId = -1;
+
+		// Loop over the form parameters and add them to a new ArrayList
+		ArrayList<String> updatedTodo = new ArrayList<String>(); 
+		for (String key : allParams.keySet()) {
+			String paramKey = key;
+			String paramValue = allParams.get(key);
+			updatedTodo.add(paramValue);
+			if(key.equals("id")){
+				editId = Integer.parseInt(paramValue);	
+			} 
+		}
+
+		// Add the new ArrayList to the existing TodoRepository ArrayList
+		TodoRepository.datastore.set(editId, updatedTodo);
+	
+		// redirect to the GetMapping Todos page so refreshing the page doesn't re-submit the form
+		return "redirect:todos";
+	}
+
+	@GetMapping("/delete")
+	public String deleteTodo(Model model, @RequestParam String id) {
+
+		int todoId = Integer.parseInt(id);
+
+		// Remove the item from the ArrayList based on it's index number
+		TodoRepository.datastore.remove(todoId);
+		// System.out.println("size: " + TodoRepository.datastore.size());
 		
-		// Pass the datastore of todos to the add.html template
 		model.addAttribute("datastore", TodoRepository.datastore);
 		return "todos";
 	}

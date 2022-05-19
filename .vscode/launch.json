@@ -10,6 +10,17 @@
             "projectName": "spring-boot-complete",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<spring-boot-initial>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.springboot.Application",
+            "projectName": "spring-boot-initial",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

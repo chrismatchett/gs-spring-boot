@@ -10,11 +10,17 @@
 <body>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Todo</h1> 
-            <a href="/todo">Add Todo</a>
+  <div class="row">
+      <div class="col">
+        
+        <div class="mb-3">
+          <h1 class="mb-3">Todo</h1> 
+          <a href="/">Home</a> |
+          <a th:href="@{/todo(id=null)}">New</a> |
+          <a href="/todos">All</a>
         </div>
+
+      </div>
     </div>
 </div>
 

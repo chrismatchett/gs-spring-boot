@@ -10,20 +10,32 @@
 <body>
 
 <div class="container">
+
     <div class="row">
         <div class="col">
-            <h1>Todo</h1> 
-            <form action="/todos" method="post">
+            
+            <div class="mb-3">
+                <h1 class="mb-3">Todo</h1> 
+                <a href="/">Home</a> |
+                <a th:href="@{/todo(id=null)}">New</a> |
+                <a href="/todos">All</a>
+              </div>
+            
+            <div>
+              <form th:attr="action=${action}" method="post">
+                <input type="hidden" th:value="${id}" name="id">
                 <div class="form-group">
                   <label for="inputTitle">Title</label>
-                  <input type="text" class="form-control" id="inputTitle" name="title" placeholder="Milk">
+                  <input type="text" class="form-control" id="inputTitle" name="title" placeholder="Milk" th:attr="value=${datastore[1]}">
                 </div>
                 <div class="form-group">
                   <label for="inputDescription">Description</label>
-                  <input type="text" class="form-control" id="inputDescription" name="description" placeholder="Get the milk">
+                  <input type="text" class="form-control" id="inputDescription" name="description" placeholder="Get the milk" th:attr="value=${datastore[2]}">
                 </div>
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" th:text="${actionButton}" class="btn btn-primary"></button>
               </form>
+            </div>
+
         </div>
     </div>
 </div>

@@ -12,16 +12,29 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="mb-5">Todos</h1>
-            <a href="/todo">Add Todo</a>
-                <div th:each="row, iterStat: ${datastore}">
-                    <p th:text="${row[0]}" class="font-weight-bold"></p>
-                    <p th:text="${row[1]}" class=""></p>
-                    <p>
+            
+            <div class="mb-3">
+                <h1 class="mb-3">Todo</h1> 
+                <a href="/">Home</a> |
+                <a th:href="@{/todo(id=null)}">New</a> |
+                <a href="/todos">All</a>
+              </div>
+
+            <div th:each="row, iterStat: ${datastore}">
+                <p th:text="${row[1]}" class="font-weight-bold"></p>
+                <p th:text="${row[2]}" class="font-weight-bold"></p>
+                <p>
+                    <span>
+                        <a th:href="@{/todo(id=${iterStat.index})}">Edit</a>
+                    </span>
+                    <span> | </span>
+                    <span>
                         <a th:href="@{/delete(id=${iterStat.index})}">Delete</a>
-                    </p>
-                    <hr />
-                </div>
+                    </span>
+                </p>
+                <hr />
+            </div>
+
         </div>
     </div>
 </div>
