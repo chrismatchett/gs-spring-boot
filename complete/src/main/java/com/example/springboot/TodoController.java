@@ -97,7 +97,6 @@ public class TodoController {
 
 		// Remove the item from the ArrayList based on it's index number
 		TodoRepository.datastore.remove(todoId);
-		// System.out.println("size: " + TodoRepository.datastore.size());
 		
 		model.addAttribute("datastore", TodoRepository.datastore);
 		return "todos";

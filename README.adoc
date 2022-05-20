@@ -14,7 +14,7 @@ We will use the Liberica JDK 11 Java Runtime, https://bell-sw.com/.
 
 === Visual Studio Code
 
-We will use Visual Studio Code as our IDE, https://code.visualstudio.com/, when working with Java
+We will use Visual Studio Code as our IDE, https://code.visualstudio.com/, when working with Java.
 
 * Spring Boot Extension Pack
 * Spring Boot Dashboard
