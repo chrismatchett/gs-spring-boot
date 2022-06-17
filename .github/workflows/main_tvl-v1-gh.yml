@@ -19,7 +19,7 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '17'
+          java-version: '11'
 
       - name: Build with Maven
         run: mvn clean install
@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'tvl-v1-gh'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_11752AD82C9742BA80C9E1542085F6C6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7BC0506C8E6F4E11ACDBCB63191FD803 }}
           package: '*.jar'
